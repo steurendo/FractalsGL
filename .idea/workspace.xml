@@ -4,39 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dbed149-9b59-43ce-8bdc-60afbd696771" name="Changes" comment="first working commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lwjgl3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4dbed149-9b59-43ce-8bdc-60afbd696771" name="Changes" comment="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FractalsGL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalsGL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot.fs" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.fs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot_bak.vs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Canvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/FractalType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/ScenarioMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScenarioMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawing/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/Mesh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawing/MeshMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/MeshMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawing/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawing/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/Shader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawing/ShaderCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/ShaderCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/ShadersAvailable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/ShadersAvailable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/MathF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/MathF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/Vector2d.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/Vector2f.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/Vector3d.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/Vector3f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/Vector3f.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +22,12 @@
     &quot;assignee&quot;: &quot;steurendo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/steurendo/FractalsGL.git&quot;,
-    &quot;accountId&quot;: &quot;0f1a8895-04a5-4b90-9356-b6b279a95f64&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/steurendo/FractalsGL.git",
+    "accountId": "05485157-4743-47b0-8807-4df9bcbb81e1"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -141,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1669727378652</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file.">
+      <option name="closed" value="true" />
+      <created>1744748541824</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744748541824</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first working commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first working commit" />
+    <MESSAGE value="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file." />
   </component>
 </project>

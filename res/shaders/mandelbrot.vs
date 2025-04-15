@@ -126,8 +126,8 @@ float fractal_default(vec3 position, float power)
 	z = vec2(0, 0);
 	for (i = 0; i < nIter; i++)
 	{
-	    z = vec2(z.x * z.x - z.y * z.y, 2 * z.x * z.y);
-	    //z = complex_pow(z, power);
+	    //z = vec2(z.x * z.x - z.y * z.y, 2 * z.x * z.y);
+	    z = complex_pow(z, power);
 	    z.x = z.x + c.x;
 	    z.y = z.y + c.y;
 	    if (z.x * z.x + z.y * z.y > LIM) break;
