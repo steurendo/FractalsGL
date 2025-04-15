@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dbed149-9b59-43ce-8bdc-60afbd696771" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FractalsGL.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/shaders/mandelbrot_bak.vs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Canvas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/FractalType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/Scenario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/ScenarioMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/drawing/Mesh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/drawing/MeshMaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/drawing/Renderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/drawing/Shader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/drawing/ShaderCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/ShadersAvailable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/Window.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/maths/MathF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/maths/Vector2d.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/maths/Vector2f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/maths/Vector3d.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/maths/Vector3f.java" afterDir="false" />
+    <list default="true" id="4dbed149-9b59-43ce-8bdc-60afbd696771" name="Changes" comment="first working commit">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lwjgl3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FractalsGL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FractalsGL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot.fs" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot_bak.vs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Canvas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/FractalType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Scenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ScenarioMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScenarioMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawing/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/Mesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawing/MeshMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/MeshMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawing/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawing/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/Shader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawing/ShaderCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawing/ShaderCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/ShadersAvailable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/ShadersAvailable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/MathF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/MathF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/Vector2d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/Vector2f.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/Vector3d.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/Vector3f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/Vector3f.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +46,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;steurendo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/steurendo/FractalsGL.git&quot;,
+    &quot;accountId&quot;: &quot;0f1a8895-04a5-4b90-9356-b6b279a95f64&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2IDs1agh0Hv0Q0iRLOxzlcn9LSR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -55,12 +75,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/media/steurendo/Frog/Programmazione/Java/Librerie/lwjgl3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -91,8 +130,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669727276482</updated>
-      <workItem from="1669727277923" duration="77000" />
+      <workItem from="1669727277923" duration="119000" />
+      <workItem from="1695484027235" duration="823000" />
+      <workItem from="1696153587870" duration="43000" />
     </task>
+    <task id="LOCAL-00001" summary="first working commit">
+      <created>1669727378652</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669727378652</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,5 +160,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first working commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first working commit" />
   </component>
 </project>

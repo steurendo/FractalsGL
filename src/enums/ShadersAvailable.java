@@ -1,15 +1,15 @@
 package enums;
 
-public enum ShadersAvailable
-{
+public enum ShadersAvailable {
     MAIN("mandelbrot");
 
-    private String name;
+    private final String name;
 
-    ShadersAvailable(String name)
-    {
+    ShadersAvailable(String name) {
         this.name = name;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 }

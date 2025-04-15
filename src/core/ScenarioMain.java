@@ -6,11 +6,10 @@ import drawing.Renderer;
 import enums.ShadersAvailable;
 import input.Input;
 import maths.Vector2f;
-import maths.Vector3f;
 import org.lwjgl.glfw.GLFW;
 
-public class ScenarioMain extends Scenario
-{
+public class ScenarioMain extends Scenario {
+    private static final int IMPLEMENTED_FRACTALS_COUNT = 7;
     private static final int ITER_DEFAULT = 100;
     private static final float ZOOM_FACTOR = 0.9f;
     private Mesh image;
@@ -21,8 +20,7 @@ public class ScenarioMain extends Scenario
     private Vector2f cursorPivot;
     private int nIter;
 
-    public ScenarioMain(Renderer renderer)
-    {
+    public ScenarioMain(Renderer renderer) {
         super(renderer);
 
         swFractal = 0;
@@ -33,39 +31,38 @@ public class ScenarioMain extends Scenario
         resize();
     }
 
-    public void switchRight()
-    {
+    public void switchRight() {
+        if (swFractal + 1 == IMPLEMENTED_FRACTALS_COUNT) return;
+
         reinit();
         swFractal++;
     }
-    public void switchLeft()
-    {
-        if (swFractal == 0)
-            return;
+
+    public void switchLeft() {
+        if (swFractal == 0) return;
 
         reinit();
         swFractal--;
     }
-    public void resize()
-    {
+
+    public void resize() {
         image = MeshMaker.generateSquare(Canvas.w, Canvas.h);
         image.create();
     }
-    public void reinit()
-    {
+
+    public void reinit() {
         zoom = 1;
         location = new Vector2f(0, 0);
         cursorPivot = null;
     }
 
     @Override
-    public void render()
-    {
+    public void render() {
         renderer.renderObjectMandelbrot(image, ShadersAvailable.MAIN, swFractal, nIter, power, location, zoom);
     }
+
     @Override
-    public void processCommands()
-    {
+    public void processCommands() {
         if (Input.consumeKeyTrigger(GLFW.GLFW_KEY_KP_ADD) && swFractal < 2)
             power++;
         if (Input.consumeKeyTrigger(GLFW.GLFW_KEY_KP_SUBTRACT) && swFractal < 2)
@@ -84,12 +81,10 @@ public class ScenarioMain extends Scenario
                 Input.consumeKeyTrigger(GLFW.GLFW_KEY_LEFT_SHIFT))
             switchLeft();
 
-        if (Input.isMouseLeftButtonDown())
-        {
+        if (Input.isMouseLeftButtonDown()) {
             if (cursorPivot == null)
                 cursorPivot = Input.getCursorPos();
-            else
-            {
+            else {
                 Vector2f cursorPos;
 
                 cursorPos = Input.getCursorPos();
@@ -97,8 +92,7 @@ public class ScenarioMain extends Scenario
                 location.y += zoom * (cursorPos.y - cursorPivot.y) * (2f / Canvas.h);
                 cursorPivot = cursorPos;
             }
-        }
-        else
+        } else
             cursorPivot = null;
         double scroll;
 
@@ -108,8 +102,13 @@ public class ScenarioMain extends Scenario
         if (scroll < 0)
             zoom /= ZOOM_FACTOR;
     }
+
     @Override
-    public void update() { }
+    public void update() {
+    }
+
     @Override
-    public void destroy() { image.destroy(); }
+    public void destroy() {
+        image.destroy();
+    }
 }
