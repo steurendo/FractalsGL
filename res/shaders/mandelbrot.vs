@@ -10,6 +10,7 @@ uniform int nIter;
 uniform float power;
 uniform vec2 location;
 uniform float zoom;
+vec2 c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 
 #define PI 3.1415926538
 #define LIM 4
@@ -40,11 +41,15 @@ vec3 hsb2rgb(vec3 c)
 }
 
 vec2 complex_scale(vec2 z, float factor) { return vec2(factor * z.x, factor * z.y); }
+float complex_mod2(vec2 z) { return z.x * z.x + z.y * z.y; }
+vec2 complex_conj(vec2 z) { return vec2(z.x, -z.y); }
 vec2 complex_add(vec2 z, vec2 w) { return vec2(z.x + w.x, z.y + w.y); }
 vec2 complex_multiply(vec2 z, vec2 w) { return vec2(z.x * w.x - z.y * w.y, z.y * w.x + z.x * w.y); }
 vec2 complex_divide(vec2 z, vec2 w)
 {
-    return vec2((z.x * w.x + z.y * w.y) / (w.x * w.x + w.y * w.y), (z.y * w.x - z.x * w.y) / (w.x * w.x + w.y * w.y));
+    float div = complex_mod2(w);
+    vec2 ret = complex_multiply(z, complex_conj(w));
+    return vec2(ret.x / div, ret.y / div);
 }
 vec2 complex_pow(vec2 z, float e)
 {
@@ -117,12 +122,11 @@ vec2 complex_sinh(vec2 z)
                 0.5 * sin(z.y) * (exp(z.x) + exp(-z.x)));
 }
 
-float fractal_default(vec3 position, float power)
+float fractal_default(float power)
 {
-	vec2 z, c;
+	vec2 z;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(0, 0);
 	for (i = 0; i < nIter; i++)
 	{
@@ -135,13 +139,12 @@ float fractal_default(vec3 position, float power)
 
 	return i;
 }
-float fractal_leaf(vec3 position, float power)
+float fractal_leaf(float power)
 {
-	vec2 z, c;
+	vec2 z;
 	float x, y, u, v;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(0, 0);
 	u = c.x / (c.x * c.x + c.y * c.y);
 	v = c.y / (c.x * c.x + c.y * c.y);
@@ -150,92 +153,83 @@ float fractal_leaf(vec3 position, float power)
 	    z = complex_pow(z, power);
 	    z.x = z.x + u;
 	    z.y = z.y - v;
-	    if (z.x * z.x + z.y * z.y > LIM) break;
+	    if (complex_mod2(z) > LIM) break;
 	}
 
 	return i;
 }
-float fractal_cactus(vec3 position)
+float fractal_cactus()
 {
-	vec2 z, c;
+	vec2 z;
 	float x, y;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(0, 0);
 	for (i = 0; i < nIter; i++)
 	{
 	    z = complex_add(complex_pow(z, 2), complex_pow(c, 6));
 	    z.x = z.x - 1;
-	    if (z.x * z.x + z.y * z.y > LIM) break;
+	    if (complex_mod2(z) > LIM) break;
 	}
 
 	return i;
 }
-float fractal_moonfish(vec3 position)
+float fractal_moonfish()
 {
-	vec2 z, c;
+	vec2 z;
 	float x, y, u, v;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(0, 0);
-	u = c.x / (c.x * c.x + c.y * c.y);
-	v = c.y / (c.x * c.x + c.y * c.y);
 	for (i = 0; i < nIter; i++)
 	{
-	    z = complex_cos(z);
-	    z.x = z.x + u;
-	    z.y = z.y - v;
-	    if (z.x * z.x + z.y * z.y > LIM) break;
+	    z = complex_add(complex_cos(z), complex_divide(vec2(1, 0), c));
+	    if (complex_mod2(z) > LIM) break;
 	}
 
 	return i;
 }
-float fractal_windmill(vec3 position)
+float fractal_windmill()
 {
-	vec2 z, c;
+	vec2 z;
 	float x, y;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(1, 1);
 	for (i = 0; i < nIter; i++)
 	{
-	    z = complex_exp(complex_multiply(complex_add(complex_pow(z, 2), z), complex_sqr(complex_pow(c, -3), 2)));
-	    if (z.x * z.x + z.y * z.y > LIM) break;
+	    z = complex_exp(complex_divide(complex_add(complex_pow(z, 2), z), complex_sqr(complex_pow(c, 3), 2)));
+	    if (complex_mod2(z) > LIM) break;
 	}
 
 	return i;
 }
-float fractal_arrows(vec3 position)
+float fractal_arrows()
 {
-	vec2 z, c;
+	vec2 z;
 	float x, y;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(0, 0);
 	for (i = 0; i < nIter; i++)
 	{
-	    z = complex_exp(complex_multiply(complex_add(complex_scale(z, -1.00001), complex_pow(z, 2)), complex_sqr(complex_pow(c, -3), 2)));
-	    if (z.x * z.x + z.y * z.y > LIM) break;
+	    z = complex_exp(complex_divide(complex_add(complex_scale(z, -1.00001), complex_pow(z, 2)), complex_sqr(complex_pow(c, 3), 2)));
+	    if (complex_mod2(z) > LIM) break;
 	}
 
 	return i;
 }
-float fractal_ball(vec3 position)
+float fractal_ball()
 {
-	vec2 z, c;
+	vec2 z;
 	float x, y;
 	int i;
 
-	c = vec2(2 * (zoom * position.x + location.x), 2 * (zoom * position.y + location.y));
 	z = vec2(0, 0);
 	for (i = 0; i < nIter; i++)
 	{
-	    z = complex_exp(complex_multiply(complex_add(complex_pow(z, 2), complex_scale(z, -1.00001)), complex_pow(c, -3)));
-	    if (z.x * z.x + z.y * z.y > LIM) break;
+	    z = complex_exp(complex_divide(complex_add(complex_scale(z, -1.00001), complex_pow(z, 2)), complex_pow(c, 3)));
+	    if (complex_mod2(z) > LIM) break;
 	}
 
 	return i;
@@ -250,25 +244,25 @@ void main()
 	switch (swFractal)
 	{
 	    case 0:
-	        n = fractal_default(position, power);
+	        n = fractal_default(power);
 	        break;
 	    case 1:
-	        n = fractal_leaf(position, power);
+	        n = fractal_leaf(power);
 	        break;
 	    case 2:
-	        n = fractal_cactus(position);
+	        n = fractal_cactus();
 	        break;
 	    case 3:
-	        n = fractal_moonfish(position);
+	        n = fractal_moonfish();
 	        break;
 	    case 4:
-	        n = fractal_windmill(position);
+	        n = fractal_windmill();
 	        break;
 	    case 5:
-	        n = fractal_arrows(position);
+	        n = fractal_arrows();
 	        break;
 	    case 6:
-	        n = fractal_ball(position);
+	        n = fractal_ball();
 	        break;
 	}
 	if (n < nIter)

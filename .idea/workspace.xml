@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dbed149-9b59-43ce-8bdc-60afbd696771" name="Changes" comment="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file.">
+    <list default="true" id="4dbed149-9b59-43ce-8bdc-60afbd696771" name="Changes" comment="Added power switch to the two first fractals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/mandelbrot.vs" afterDir="false" />
     </list>
@@ -119,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744748541824</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added power switch to the two first fractals">
+      <option name="closed" value="true" />
+      <created>1744749254033</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744749254033</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +148,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first working commit" />
     <MESSAGE value="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code cleaned. Now fractal switcher is limited to the number of fractals that are implemented in the vertex shader file." />
+    <MESSAGE value="Added power switch to the two first fractals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added power switch to the two first fractals" />
   </component>
 </project>
